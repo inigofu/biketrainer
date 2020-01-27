@@ -1,0 +1,118 @@
+﻿<Window x:Class="SpatialDataViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+        xmlns:oxy="http://oxyplot.org/wpf"
+        Title="MainWindow" Height="600" Width="1200">
+    
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="200"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="350"/>
+        </Grid.ColumnDefinitions>
+        <Menu IsMainMenu="True">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Clear Map" Click="ClearMap_Clicked"/>
+                <MenuItem Header="_Import">
+                    <MenuItem Header="Bing Data Source">
+                        <MenuItem Header="XML" Click="ImportData_Clicked" Tag="bing-xml"/>
+                        <MenuItem Header="CSV Delimited" Click="ImportData_Clicked" Tag="bing-csv"/>
+                        <MenuItem Header="Tab Delimited" Click="ImportData_Clicked" Tag="bing-tab"/>
+                        <MenuItem Header="Pipe Delimited" Click="ImportData_Clicked" Tag="bing-pipe"/>
+                    </MenuItem>
+                    <MenuItem Header="Well Known Text" Click="ImportData_Clicked" Tag="wkt"/>
+                    <MenuItem Header="Shapefile" Click="ImportData_Clicked" Tag="shp"/>
+                    <MenuItem Header="GeoRSS" Click="ImportData_Clicked" Tag="georss"/>
+                    <MenuItem Header="GPX" Click="ImportData_Clicked" Tag="gpx"/>
+                    <MenuItem Header="KML" Click="ImportData_Clicked" Tag="kml"/>
+                    <MenuItem Header="KMZ" Click="ImportData_Clicked" Tag="kmz"/>
+                    <MenuItem Header="GeoJSON" Click="ImportData_Clicked" Tag="geojson"/>                    
+                </MenuItem>
+                <MenuItem Header="_Export">
+                    <MenuItem Header="Bing Data Source">
+                        <MenuItem Header="XML" Click="ExportData_Clicked" Tag="bing-xml"/>
+                        <MenuItem Header="CSV Delimited" Click="ExportData_Clicked" Tag="bing-csv"/>
+                        <MenuItem Header="Tab Delimited" Click="ExportData_Clicked" Tag="bing-tab"/>
+                        <MenuItem Header="Pipe Delimited" Click="ExportData_Clicked" Tag="bing-pipe"/>
+                    </MenuItem>
+                    <MenuItem Header="Well Known Text" Click="ExportData_Clicked" Tag="wkt"/>
+                    <MenuItem Header="Shapefile" Click="ExportData_Clicked" Tag="shp"/>
+                    <MenuItem Header="GeoRSS" Click="ExportData_Clicked" Tag="georss"/>
+                    <MenuItem Header="GPX" Click="ExportData_Clicked" Tag="gpx"/>
+                    <MenuItem Header="KML" Click="ExportData_Clicked" Tag="kml"/>
+                    <MenuItem Header="KMZ" Click="ExportData_Clicked" Tag="kmz"/>
+                    <MenuItem Header="GeoJSON" Click="ExportData_Clicked" Tag="geojson"/>                    
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="_Exit" Click="Exit_Clicked"/>
+            </MenuItem>
+            <MenuItem Header="_Tools">
+                <MenuItem Header="_Generate Tiles" Click="GenerateTilesBtn_Clicked"/>
+                <MenuItem Header="_Settings" Click="SettingsBtn_Clicked"/>
+            </MenuItem>
+        </Menu>
+
+        <m:Map Name="MyMap"  Grid.Row="1" CredentialsProvider="Ai6zQ5AwxFAZKY3DtRmKAPJHZVlK4h_e01jNbblWGbagsXzwH0nf5vYrTEr13kBd">
+            <m:Map.ContextMenu>
+                <ContextMenu>
+                    <ContextMenu.ItemsSource>
+                        <CompositeCollection>
+                            <MenuItem Header="Copy Coordinates" Click="CopyCoordinates_Clicked"/>
+                        </CompositeCollection>
+                    </ContextMenu.ItemsSource>
+                </ContextMenu>
+            </m:Map.ContextMenu>
+            <m:Map.Children>
+                <m:MapLayer Name="PolyLayer"/>
+                <m:MapLayer Name="PinLayer"/>
+            </m:Map.Children>
+        </m:Map>
+
+        <!--<Slider Grid.Row="1" Name="ZoomBar" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,100,0,0" Height="200" IsDirectionReversed="True" Minimum="1" Maximum="21" Orientation="Vertical"/>-->
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,40">
+            <Slider Name="ZoomBar" Minimum="1" Maximum="21" Orientation="Vertical" Height="200" Ticks="21" IsDirectionReversed="True"
+                            TickFrequency="1" Value="{Binding ElementName=MyMap, Path=ZoomLevel}"/>
+            <TextBlock Text="{Binding ElementName=MyMap, Path=ZoomLevel}" Width="30" Margin="0,10"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Background="White" Margin="5" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <RadioButton GroupName="MapType" Content="Road" Margin="5" Tag="road" IsChecked="True" Click="MapTypeSelected"/>
+            <RadioButton GroupName="MapType" Content="Aerial" Margin="5" Tag="aerial" Click="MapTypeSelected"/>
+            <RadioButton GroupName="MapType" Content="Hybrid" Margin="5" Tag="hybrid" Click="MapTypeSelected"/>
+        </StackPanel>
+
+
+        <StackPanel Name="MetadataPanel" Grid.Column="1" Grid.Row="1" Margin="5">
+            <TextBlock Text="Metadata" FontSize="24"/>
+            
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="ID: "/>
+                <TextBlock Text="{Binding ID}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Title: "/>
+                <TextBlock Text="{Binding Title}"/>
+            </StackPanel>
+            
+            <TextBlock Text="Description: "/>
+            <WebBrowser Name="DescriptionBox"/>
+
+            <TextBlock Text="Properties:" FontSize="18" Margin="0,10"/>
+            <TextBox Name="MetadataTbx" TextWrapping="Wrap" MaxHeight="200" VerticalScrollBarVisibility="Auto"/>
+        </StackPanel>
+        <oxy:PlotView Grid.Row="2" Model="{Binding MyModel}"/>
+    </Grid>
+</Window>

@@ -1,0 +1,53 @@
+﻿<Window x:Class="SpatialDataViewer.Controls.TileGeneratingDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Tile Generator" Height="300" Width="350" >
+    
+    <Grid>
+        <StackPanel Margin="10" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Min Zoom Level"/>
+                <ComboBox Name="MinZoomCbx" Margin="10,0" Width="50" SelectionChanged="ZoomRangeChanged"/>
+
+                <TextBlock Text="Max Zoom Level"/>
+                <ComboBox Name="MaxZoomCbx" Margin="10,0" Width="50" SelectionChanged="ZoomRangeChanged"/>
+            </StackPanel>
+
+            <CheckBox Name="RemoveEmptyTileCbx" Content="Remove Empty Tiles" Margin="0,10" IsChecked="True"/>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Output Format: "/>
+                <RadioButton Name="QuakeyTileFormat" Content="Quadkey Names" IsChecked="True" GroupName="TileNameFormat" />
+                <RadioButton Content="X,Y,Zoom Folders" Margin="10,0,0,0" GroupName="TileNameFormat" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Tile Background Color: "/>
+
+                <ComboBox Name="TileBackgroundColor" Width="150" Margin="10,0,0,0" 
+                                  SelectedIndex="133" ItemsSource="{Binding Source={StaticResource colorPropertiesOdp}}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Border Background="{Binding Name}" BorderBrush="Black" Width="25" Height="25"/>
+                                <TextBlock Text="{Binding Name}" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
+
+            <TextBlock Name="TileMsgTbx" Text="Approximately..."/>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10" HorizontalAlignment="Center">
+                <Button Name="ProcessTilesBtn" Content="Generate Tiles" Width="100" Height="30" Margin="0,0,10,0" Click="ProcessTilesBtn_Clicked"/>
+                <Button Name="CancelBtn" Content="Cancel" Width="100" Height="30" Click="CancelBtn_Clicked"/>
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Name="ProgressTbx" Text=" " HorizontalAlignment="Center"/>
+                <ProgressBar Name="TileProgressBar" Height="30" Minimum="0" Margin="0,10"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

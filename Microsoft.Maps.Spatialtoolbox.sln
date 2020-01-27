@@ -1,0 +1,107 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{DF3F122E-4738-48EC-958D-6C74102E7B91}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{8E1D64FD-C6C7-4A3A-8764-A8D9F151C698}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{50F2D825-8D07-4B65-B87C-C87BD0D51F40}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{8D86179C-5D8B-40B7-A0EF-78534FFB5C64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpatialDataViewer", "Samples\Web\SpatialDataViewer\SpatialDataViewer.csproj", "{C4833301-F81A-46CC-9A13-D1A23E6AE9AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{1C2ACE20-9412-4BDE-BAE2-F873A92BDF04}"
+	ProjectSection(SolutionItems) = preProject
+		Libaries\Microsoft.Maps.MapControl.WPF.dll = Libaries\Microsoft.Maps.MapControl.WPF.dll
+		Libaries\Microsoft.Maps.MapControl.WPF.xml = Libaries\Microsoft.Maps.MapControl.WPF.xml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpatialDataViewer", "Samples\WPF\SpatialDataViewer\SpatialDataViewer.csproj", "{106417B6-1458-439B-A693-FBAB87103AF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Maps.SpatialToolbox.WPF", "Source\Microsoft.Maps.SpatialToolbox.WPF\Microsoft.Maps.SpatialToolbox.WPF.csproj", "{F08713BF-ADA1-4855-9DD9-C5FBDDA9BD69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Maps.SpatialToolbox.Core", "Source\Microsoft.Maps.SpatialToolbox.Core\Microsoft.Maps.SpatialToolbox.Core.csproj", "{259D7BFC-2FAD-471A-9B20-0A9736AD2391}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntPlusRacer", "AntPlusRacer\AntPlusRacer.csproj", "{B3225E62-4B9A-4FE3-B8D2-CDA72323B6E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C4833301-F81A-46CC-9A13-D1A23E6AE9AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4833301-F81A-46CC-9A13-D1A23E6AE9AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4833301-F81A-46CC-9A13-D1A23E6AE9AF}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{C4833301-F81A-46CC-9A13-D1A23E6AE9AF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C4833301-F81A-46CC-9A13-D1A23E6AE9AF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C4833301-F81A-46CC-9A13-D1A23E6AE9AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4833301-F81A-46CC-9A13-D1A23E6AE9AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4833301-F81A-46CC-9A13-D1A23E6AE9AF}.Release|ARM.ActiveCfg = Release|Any CPU
+		{C4833301-F81A-46CC-9A13-D1A23E6AE9AF}.Release|x64.ActiveCfg = Release|Any CPU
+		{C4833301-F81A-46CC-9A13-D1A23E6AE9AF}.Release|x86.ActiveCfg = Release|Any CPU
+		{106417B6-1458-439B-A693-FBAB87103AF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{106417B6-1458-439B-A693-FBAB87103AF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{106417B6-1458-439B-A693-FBAB87103AF7}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{106417B6-1458-439B-A693-FBAB87103AF7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{106417B6-1458-439B-A693-FBAB87103AF7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{106417B6-1458-439B-A693-FBAB87103AF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{106417B6-1458-439B-A693-FBAB87103AF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{106417B6-1458-439B-A693-FBAB87103AF7}.Release|ARM.ActiveCfg = Release|Any CPU
+		{106417B6-1458-439B-A693-FBAB87103AF7}.Release|x64.ActiveCfg = Release|Any CPU
+		{106417B6-1458-439B-A693-FBAB87103AF7}.Release|x86.ActiveCfg = Release|Any CPU
+		{F08713BF-ADA1-4855-9DD9-C5FBDDA9BD69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F08713BF-ADA1-4855-9DD9-C5FBDDA9BD69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F08713BF-ADA1-4855-9DD9-C5FBDDA9BD69}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{F08713BF-ADA1-4855-9DD9-C5FBDDA9BD69}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F08713BF-ADA1-4855-9DD9-C5FBDDA9BD69}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F08713BF-ADA1-4855-9DD9-C5FBDDA9BD69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F08713BF-ADA1-4855-9DD9-C5FBDDA9BD69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F08713BF-ADA1-4855-9DD9-C5FBDDA9BD69}.Release|ARM.ActiveCfg = Release|Any CPU
+		{F08713BF-ADA1-4855-9DD9-C5FBDDA9BD69}.Release|x64.ActiveCfg = Release|Any CPU
+		{F08713BF-ADA1-4855-9DD9-C5FBDDA9BD69}.Release|x86.ActiveCfg = Release|Any CPU
+		{259D7BFC-2FAD-471A-9B20-0A9736AD2391}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{259D7BFC-2FAD-471A-9B20-0A9736AD2391}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{259D7BFC-2FAD-471A-9B20-0A9736AD2391}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{259D7BFC-2FAD-471A-9B20-0A9736AD2391}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{259D7BFC-2FAD-471A-9B20-0A9736AD2391}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{259D7BFC-2FAD-471A-9B20-0A9736AD2391}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{259D7BFC-2FAD-471A-9B20-0A9736AD2391}.Release|Any CPU.Build.0 = Release|Any CPU
+		{259D7BFC-2FAD-471A-9B20-0A9736AD2391}.Release|ARM.ActiveCfg = Release|Any CPU
+		{259D7BFC-2FAD-471A-9B20-0A9736AD2391}.Release|x64.ActiveCfg = Release|Any CPU
+		{259D7BFC-2FAD-471A-9B20-0A9736AD2391}.Release|x86.ActiveCfg = Release|Any CPU
+		{B3225E62-4B9A-4FE3-B8D2-CDA72323B6E0}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{B3225E62-4B9A-4FE3-B8D2-CDA72323B6E0}.Debug|ARM.ActiveCfg = Debug|x86
+		{B3225E62-4B9A-4FE3-B8D2-CDA72323B6E0}.Debug|x64.ActiveCfg = Debug|x86
+		{B3225E62-4B9A-4FE3-B8D2-CDA72323B6E0}.Debug|x86.ActiveCfg = Debug|x86
+		{B3225E62-4B9A-4FE3-B8D2-CDA72323B6E0}.Debug|x86.Build.0 = Debug|x86
+		{B3225E62-4B9A-4FE3-B8D2-CDA72323B6E0}.Release|Any CPU.ActiveCfg = Release|x86
+		{B3225E62-4B9A-4FE3-B8D2-CDA72323B6E0}.Release|ARM.ActiveCfg = Release|x86
+		{B3225E62-4B9A-4FE3-B8D2-CDA72323B6E0}.Release|x64.ActiveCfg = Release|x86
+		{B3225E62-4B9A-4FE3-B8D2-CDA72323B6E0}.Release|x86.ActiveCfg = Release|x86
+		{B3225E62-4B9A-4FE3-B8D2-CDA72323B6E0}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{50F2D825-8D07-4B65-B87C-C87BD0D51F40} = {8E1D64FD-C6C7-4A3A-8764-A8D9F151C698}
+		{8D86179C-5D8B-40B7-A0EF-78534FFB5C64} = {8E1D64FD-C6C7-4A3A-8764-A8D9F151C698}
+		{C4833301-F81A-46CC-9A13-D1A23E6AE9AF} = {50F2D825-8D07-4B65-B87C-C87BD0D51F40}
+		{106417B6-1458-439B-A693-FBAB87103AF7} = {8D86179C-5D8B-40B7-A0EF-78534FFB5C64}
+		{F08713BF-ADA1-4855-9DD9-C5FBDDA9BD69} = {DF3F122E-4738-48EC-958D-6C74102E7B91}
+		{259D7BFC-2FAD-471A-9B20-0A9736AD2391} = {DF3F122E-4738-48EC-958D-6C74102E7B91}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {49D649B2-5F07-4ADE-9646-E08969D6BD30}
+	EndGlobalSection
+EndGlobal

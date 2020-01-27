@@ -1,0 +1,38 @@
+﻿<Window x:Class="SpatialDataViewer.Controls.ColorPickerDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Color Picker" Height="220" Width="360">
+    <StackPanel Margin="10">
+        
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Red:" Width="40"/>
+            <Slider Name="rSlider" Minimum="0" Maximum="255" Width="256" ValueChanged="ColorSlide_Changed"/>
+            <TextBlock Text="{Binding ElementName=rSlider,Path=Value}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="0,10">
+            <TextBlock Text="Green:" Width="40"/>
+            <Slider Name="gSlider" Minimum="0" Maximum="255" Width="256" ValueChanged="ColorSlide_Changed"/>
+            <TextBlock Text="{Binding ElementName=gSlider,Path=Value}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Blue:" Width="40"/>
+            <Slider Name="bSlider" Minimum="0" Maximum="255" Width="256" ValueChanged="ColorSlide_Changed"/>
+            <TextBlock Text="{Binding ElementName=bSlider,Path=Value}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="0,10">
+            <TextBlock Text="Alpha:" Width="40"/>
+            <Slider Name="aSlider" Minimum="0" Maximum="255" Width="256" ValueChanged="ColorSlide_Changed"/>
+            <TextBlock Text="{Binding ElementName=aSlider,Path=Value}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <Border Name="ColorPreviewPanel" BorderBrush="Black" BorderThickness="2" Width="50" Height="50" Margin="10,0,0,0"/>
+
+            <Button Content="OK" Width="75" Height="25" Click="OkBtn_Clicked" Margin="70,0,10,0"/>
+            <Button Content="Cancel" Width="75" Height="25" Click="CancelBtn_Clicked"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
